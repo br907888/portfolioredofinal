@@ -220,7 +220,7 @@ Our research and user data indicated that students desired the opportunity to ex
         imageCaption: 'Wireframes exploring the visual presentation of Comet Tales.',
 
         tools: [
-            'Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Miro', 'React Native', 'JavaScript',
+            'Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Adobe Aero'
         ],
 
         outcome: `User data post-prototype release saw immense user satisfaction, with students feeling a sense of agency and control over their learning. This excited them and ecnouraged the students to learn more about their natural world. Discovery using the application was reported to feel sleek and exploratory in nature — as users with the freedom of modular interaction and the colorful graphical interface of the platform.
@@ -250,7 +250,7 @@ Our key design strategy was to have all of the core features of the app centrali
         imageCaption: 'Initial character and icon design.',
 
         tools: [
-            'Figma', 'Adobe Illustrator', 'React Native', 'Firebase', 'JavaScript', 'Miro',
+            'Figma', 'Adobe Illustrator', 'React Native', 'Firebase', 'JavaScript',
         ],
 
         outcome: `Additional user data was collected following the development of the final Dust Buddies prototype. Feedback indicated that the collaborative approach to roommate mediation based on "gameified" content led to a greater sense of accountability when enaging with tasks. Users also felt more eager to particpate with the interface when avatar personalization and a strong visual aesthetic was introduced
