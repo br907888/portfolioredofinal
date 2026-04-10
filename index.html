@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brock Adams — Developer. Designer. Artist.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" id="nav">
+        <a href="#home" class="nav__logo">
+            <div class="logo-badge">BA</div>
+        </a>
+        <ul class="nav__links">
+            <li><a href="#home" class="nav__link">Home</a></li>
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">✕</button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+        <canvas class="star-field" id="starField"></canvas>
+
+        <!-- Orbital rings -->
+        <div class="orbital orbital--1"></div>
+        <div class="orbital orbital--2"></div>
+        <div class="orbital orbital--3"></div>
+
+        <!-- Retro chevron accent -->
+        <div class="hero__chevron-row" aria-hidden="true">
+            <div class="chevron"></div><div class="chevron"></div>
+            <div class="chevron"></div><div class="chevron"></div>
+            <div class="chevron"></div><div class="chevron"></div>
+        </div>
+
+        <div class="hero__content">
+            <div class="hero__eyebrow">
+                <span class="eyebrow-line"></span>
+                <span class="eyebrow-text">// portfolio · 2026</span>
+                <span class="eyebrow-line"></span>
+            </div>
+            <h1 class="hero__name">
+                <span class="hero__name-line">brock</span>
+                <span class="hero__name-line hero__name-line--accent">adams</span>
+            </h1>
+            <div class="hero__tagline">
+                <span id="typewriter"></span><span class="cursor">_</span>
+            </div>
+            <p class="hero__sub">Producing powerful digital worlds to educate and inspire.</p>
+            <div class="hero__cta">
+                <a href="#projects" class="btn btn--primary">
+                    <span class="btn__icon">◈</span> Explore My Work
+                </a>
+                <a href="#about" class="btn btn--ghost">About Me →</a>
+            </div>
+        </div>
+
+        <!-- Geodesic planet -->
+        <div class="hero__planet" aria-hidden="true">
+            <div class="planet__sphere">
+                <div class="planet__lat planet__lat--1"></div>
+                <div class="planet__lat planet__lat--2"></div>
+                <div class="planet__lat planet__lat--3"></div>
+                <div class="planet__lon planet__lon--1"></div>
+                <div class="planet__lon planet__lon--2"></div>
+                <div class="planet__lon planet__lon--3"></div>
+                <div class="planet__glow"></div>
+            </div>
+            <div class="planet__ring planet__ring--1"></div>
+            <div class="planet__ring planet__ring--2"></div>
+        </div>
+
+        <!-- Retro badge -->
+        <div class="hero__badge">
+            <svg viewBox="0 0 120 120" class="hero__badge-svg">
+                <circle cx="60" cy="60" r="55" fill="none" stroke="rgba(0,190,170,0.3)" stroke-width="1" stroke-dasharray="4 4"/>
+                <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(255,107,44,0.2)" stroke-width="1"/>
+            </svg>
+            <div class="hero__badge-inner">
+                <span class="badge-role">UI/UX</span>
+                <span class="badge-role">DEV</span>
+                <span class="badge-role">ART</span>
+            </div>
+        </div>
+
+        <div class="hero__scroll">
+            <span>scroll</span>
+            <div class="scroll-bar"></div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+        <div class="retro-grid-overlay" aria-hidden="true"></div>
+
+        <div class="section-header reveal">
+            <span class="section-label">01 — About</span>
+            <h2 class="section-title">hello there!</h2>
+            <div class="title-rule"></div>
+        </div>
+
+        <div class="about__layout">
+            <div class="about__visual reveal">
+                <div class="photo-frame">
+                    <img
+                        src="assets/brockprofile.jpg"
+                        alt="Brock Adams"
+                        class="about__photo"
+                        id="profilePhoto"
+                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'%3E%3Crect width=\'300\' height=\'300\' fill=\'%23132040\'/%3E%3Ccircle cx=\'150\' cy=\'120\' r=\'60\' fill=\'%23193060\'/%3E%3Ccircle cx=\'150\' cy=\'280\' r=\'100\' fill=\'%23193060\'/%3E%3Ctext x=\'150\' y=\'140\' font-size=\'14\' fill=\'%2300BEA8\' text-anchor=\'middle\' font-family=\'monospace\'%3EBA%3C/text%3E%3C/svg%3E'"
+                    >
+                    <div class="frame-corner tl"></div>
+                    <div class="frame-corner tr"></div>
+                    <div class="frame-corner bl"></div>
+                    <div class="frame-corner br"></div>
+                    <div class="photo-ring"></div>
+                </div>
+                <div class="about__badge-strip">
+                    <span>Orlando, FL</span>
+                    <span class="sep">·</span>
+                    <span>UCF Graduate</span>
+                    <span class="sep">·</span>
+                    <span>3+ Years</span>
+                </div>
+            </div>
+
+            <div class="about__text reveal" data-delay="150">
+                <p class="about__lead">
+                    I am an impassioned and driven designer based out of <strong>Orlando, Florida</strong>. Using my expertise in both graphic and web design, I have been developing unique web and mobile experiences for students for over <strong>four years</strong>.
+                </p>
+                <p>
+                    My skillset ensures that the digital experiences I develop are intuitive, engaging, and visually appealing to all. Though I am an artist and storyteller by trade, I am an educator at heart. I leverage my experience as a researcher to merge education and interactivity for students of all ages. My mission is to ensure that quality and dynamic educational content is available for <strong>everyone.</strong> 
+                </p>
+                <p>
+                    When I'm not developing or researching, I enjoy drawing, watching classic movies, finding new things to learn about, and giving back to my community!
+                </p>
+
+                <div class="about__stats">
+                    <div class="stat">
+                        <span class="stat__n" data-target="4">0</span><span class="stat__plus">+</span>
+                        <span class="stat__label">Years Exp.</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__n" data-target="10">0</span><span class="stat__plus">+</span>
+                        <span class="stat__label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__n" data-target="7">0</span><span class="stat__plus">+</span>
+                        <span class="stat__label">Skills</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="skills-block">
+            <div class="section-header reveal">
+                <span class="section-label">02 — Skills</span>
+                <h2 class="section-title">my skills</h2>
+                <div class="title-rule"></div>
+            </div>
+
+            <div class="skills__grid">
+                <div class="skill-orb" data-delay="0">
+                    <div class="skill-orb__ring"></div>
+                    <div class="skill-orb__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                        </svg>
+                    </div>
+                    <span>Figma</span>
+                </div>
+                <div class="skill-orb" data-delay="80">
+                    <div class="skill-orb__ring"></div>
+                    <div class="skill-orb__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-orb" data-delay="160">
+                    <div class="skill-orb__ring"></div>
+                    <div class="skill-orb__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2c-2.8 3-4.5 6.5-4.5 10s1.7 7 4.5 10M12 2c2.8 3 4.5 6.5 4.5 10s-1.7 7-4.5 10"/>
+                        </svg>
+                    </div>
+                    <span>React / RN</span>
+                </div>
+                <div class="skill-orb" data-delay="240">
+                    <div class="skill-orb__ring"></div>
+                    <div class="skill-orb__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <path d="M4 4h16v16H4z M8 4v16 M4 8h16"/>
+                        </svg>
+                    </div>
+                    <span>HTML / CSS</span>
+                </div>
+                <div class="skill-orb" data-delay="320">
+                    <div class="skill-orb__ring"></div>
+                    <div class="skill-orb__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                    </div>
+                    <span>Photoshop</span>
+                </div>
+                <div class="skill-orb" data-delay="400">
+                    <div class="skill-orb__ring"></div>
+                    <div class="skill-orb__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span>Graphic Design</span>
+                </div>
+                <div class="skill-orb" data-delay="480">
+                    <div class="skill-orb__ring"></div>
+                    <div class="skill-orb__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                        </svg>
+                    </div>
+                    <span>UI/UX Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="projects" id="projects">
+        <div class="projects__grid-bg" aria-hidden="true"></div>
+
+        <div class="section-header reveal">
+            <span class="section-label">03 — Work</span>
+            <h2 class="section-title">case studies</h2>
+            <div class="title-rule"></div>
+            <p class="section-sub">Select education-based projects I worked on presented as researched case studies.</p>
+        </div>
+
+        <div class="projects__list">
+
+            <!-- Project 1 -->
+            <article class="project-card reveal" data-project="comet-tales">
+                <div class="project-card__banner project-card__banner--space">
+                    <div class="pcard-stars"></div>
+                    <div class="pcard-planet"></div>
+                    <div class="pcard-ring"></div>
+                    <div class="project-card__num">01</div>
+                </div>
+                <div class="project-card__body">
+                    <div class="project-card__tags">
+                        <span class="chip">UI/UX Design</span>
+                        <span class="chip">Project Management</span>
+                        <span class="chip chip--accent">Educational Tech</span>
+                    </div>
+                    <h3 class="project-card__title">Comet Tales Prototype</h3>
+                    <p class="project-card__desc">
+                        A high-fidelity educational prototype combining storytelling and exploration to teach middle school students about astronomical topics.
+                    </p>
+                    <div class="project-card__role">
+                        <span class="role-tag">My Role</span>
+                        Project Manager & Lead UI/UX Designer
+                    </div>
+                    <div class="project-card__actions">
+                        <button class="btn btn--primary btn--sm" onclick="openCase('comet-tales')">
+                            <span class="btn__icon">◈</span> View Case Study
+                        </button>
+                        <a href="https://www.figma.com/proto/gsPqmIZWVUKxvTAiO5MpNq/high-fid-prototype?node-id=105-1048&starting-point-node-id=105%3A1048&scaling=scale-down&content-scaling=fixed&t=Zri9tPH4SnvZldrV-1" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
+                            View Project ↗
+                        </a>
+                    </div>
+                    <div class="project-card__tools">
+                        <span class="tool-chip">Figma</span>
+                        <span class="tool-chip">Adobe Illustrator</span>
+                        <span class="tool-chip">Adobe Photoshop</span>
+                        <span class="tool-chip">Miro</span>
+                        <span class="tool-chip">React Native</span>
+                        <span class="tool-chip">JavaScript</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card reveal" data-delay="150" data-project="dust-buddies">
+                <div class="project-card__banner project-card__banner--green">
+                    <div class="pcard-grid-lines"></div>
+                    <div class="pcard-hex"></div>
+                    <div class="project-card__num">02</div>
+                </div>
+                <div class="project-card__body">
+                    <div class="project-card__tags">
+                        <span class="chip">UI/UX Design</span>
+                        <span class="chip">Platform Architecture</span>
+                        <span class="chip chip--accent">Gamification</span>
+                    </div>
+                    <h3 class="project-card__title">Dust Buddies Prototype</h3>
+                    <p class="project-card__desc">
+                        A multi-modal mobile project designed to mediate between roommates and encourage chore management through gamified education.
+                    </p>
+                    <div class="project-card__role">
+                        <span class="role-tag">My Role</span>
+                        UI/UX Designer & Platform Architect
+                    </div>
+                    <div class="project-card__actions">
+                        <button class="btn btn--primary btn--sm" onclick="openCase('dust-buddies')">
+                            <span class="btn__icon">◈</span> View Case Study
+                        </button>
+                        <a href="https://www.figma.com/proto/7uX3sVdNdCqSU8qQYmBHSv/Hi-fi-Prototype?node-id=6-367&starting-point-node-id=6%3A367&t=NAQlf870cJmXMN6I-1" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
+                            View Project ↗
+                        </a>
+                    </div>
+                    <div class="project-card__tools">
+                        <span class="tool-chip">Figma</span>
+                        <span class="tool-chip">Adobe Illustrator</span>
+                        <span class="tool-chip">React Native</span>
+                        <span class="tool-chip">Firebase</span>
+                        <span class="tool-chip">JavaScript</span>
+                        <span class="tool-chip">Miro</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Case Study In Depth -->
+
+    <div class="modal-overlay" id="overlay" onclick="closeCase()">
+        <div class="modal" id="modal" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal__close" onclick="closeCase()" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div id="modalContent" class="modal__inner"></div>
+        </div>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+        <div class="contact__orb contact__orb--1"></div>
+        <div class="contact__orb contact__orb--2"></div>
+
+        <div class="section-header reveal">
+            <span class="section-label">04 — Contact</span>
+            <h2 class="section-title">contact me!</h2>
+            <div class="title-rule"></div>
+            <p class="section-sub">I'd love to connect. Reach out with any inquiries! (Form still under constuction!)</p>
+        </div>
+
+        <div class="contact__layout">
+            <div class="contact__info reveal">
+                <div class="contact-item">
+                    <span class="contact-item__label">Email</span>
+                    <a href="mailto:brock.adams@ucf.edu" class="contact-item__value">brock.adams@ucf.edu</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-item__label">Phone</span>
+                    <a href="tel:4076686801" class="contact-item__value">(407) 668-6801</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-item__label">Location</span>
+                    <span class="contact-item__value no-link">Orlando, Florida</span>
+                </div>
+
+                <div class="contact__availability">
+                    <span class="avail-dot"></span>
+                    Available for freelance & full-time roles
+                </div>
+            </div>
+
+            <form class="contact__form reveal" data-delay="150" id="contactForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fname">Name</label>
+                        <input type="text" id="fname" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="femail">Email</label>
+                        <input type="email" id="femail" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fsubject">Subject</label>
+                    <input type="text" id="fsubject" placeholder="Project inquiry, collaboration, etc.">
+                </div>
+                <div class="form-group">
+                    <label for="fmessage">Message</label>
+                    <textarea id="fmessage" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+                    <span class="btn__icon">◈</span> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="logo-badge footer__logo">BA</div>
+            <p class="footer__copy">© 2026 Brock Adams &nbsp;·&nbsp; Developer. Designer. Artist.</p>
+            <p class="footer__sub">Crafted in Orlando, FL &nbsp;·&nbsp; Built with HTML, CSS & JS</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
