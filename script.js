@@ -361,6 +361,146 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') window.close
 })();
 
 
+/* ====== LIGHTBOX ====== */
+const Lightbox = (function() {
+    const lb      = document.getElementById('lightbox');
+    const img     = document.getElementById('lightboxImg');
+    const counter = document.getElementById('lightboxCounter');
+    const closeBtn= document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    const stage   = document.getElementById('lightboxStage');
+
+    let pool = [];
+    let idx  = 0;
+
+    function show(slides, startIndex) {
+        pool = slides;
+        go(startIndex);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hide() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function go(i) {
+        idx = (i + pool.length) % pool.length;
+        img.src = pool[idx].src;
+        img.alt = pool[idx].alt;
+
+        const multi = pool.length > 1;
+        prevBtn.hidden = !multi;
+        nextBtn.hidden = !multi;
+        counter.textContent = multi ? (idx + 1) + ' / ' + pool.length : '';
+
+        stage.style.animation = 'none';
+        requestAnimationFrame(() => { stage.style.animation = ''; });
+    }
+
+    closeBtn.addEventListener('click', hide);
+    prevBtn.addEventListener('click', () => go(idx - 1));
+    nextBtn.addEventListener('click', () => go(idx + 1));
+    lb.addEventListener('click', e => { if (e.target === lb) hide(); });
+    document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape')      hide();
+        if (e.key === 'ArrowLeft')   go(idx - 1);
+        if (e.key === 'ArrowRight')  go(idx + 1);
+    });
+
+    return { show };
+})();
+
+
+/* ====== LNC SCREENSHOT CAROUSELS ====== */
+(function initCarousels() {
+    document.querySelectorAll('.lnc-carousel').forEach(carousel => {
+        const slides  = Array.from(carousel.querySelectorAll('.lnc-carousel__slide'));
+        const prevBtn = carousel.querySelector('.lnc-carousel__prev');
+        const nextBtn = carousel.querySelector('.lnc-carousel__next');
+        const dotsEl  = carousel.querySelector('.lnc-carousel__dots');
+        let current = 0;
+
+        function validSlides() {
+            return slides.filter(s => !s.dataset.failed);
+        }
+
+        function render() {
+            const vs = validSlides();
+
+            if (vs.length === 0) {
+                carousel.classList.add('no-slides');
+                if (prevBtn) prevBtn.hidden = true;
+                if (nextBtn) nextBtn.hidden = true;
+                return;
+            }
+
+            carousel.classList.remove('no-slides');
+            const multi = vs.length > 1;
+            if (prevBtn) prevBtn.hidden = !multi;
+            if (nextBtn) nextBtn.hidden = !multi;
+
+            if (dotsEl) {
+                dotsEl.innerHTML = '';
+                if (multi) {
+                    vs.forEach((_, i) => {
+                        const dot = document.createElement('button');
+                        dot.className = 'lnc-carousel__dot' + (i === 0 ? ' active' : '');
+                        dot.setAttribute('aria-label', 'Screenshot ' + (i + 1));
+                        dot.addEventListener('click', e => { e.stopPropagation(); goTo(i); });
+                        dotsEl.appendChild(dot);
+                    });
+                }
+            }
+
+            if (current >= vs.length) current = 0;
+            goTo(current);
+        }
+
+        function goTo(index) {
+            const vs = validSlides();
+            vs.forEach(s => s.classList.remove('active'));
+            vs[index].classList.add('active');
+            current = index;
+            if (dotsEl) {
+                dotsEl.querySelectorAll('.lnc-carousel__dot').forEach((d, i) =>
+                    d.classList.toggle('active', i === index)
+                );
+            }
+        }
+
+        slides.forEach(slide => {
+            slide.addEventListener('error', () => {
+                slide.dataset.failed = '1';
+                render();
+            });
+        });
+
+        if (prevBtn) prevBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            const vs = validSlides();
+            goTo((current - 1 + vs.length) % vs.length);
+        });
+        if (nextBtn) nextBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            goTo((current + 1) % validSlides().length);
+        });
+
+        // Open lightbox on click
+        carousel.querySelector('.lnc-carousel__slides').addEventListener('click', () => {
+            const vs = validSlides();
+            if (vs.length > 0) Lightbox.show(vs, current);
+        });
+
+        render();
+        setTimeout(render, 50);
+    });
+})();
+
+
 /* ====== CASE STUDY BANNER STYLES (injected) ====== */
 (function addBannerStyles() {
     const s = document.createElement('style');

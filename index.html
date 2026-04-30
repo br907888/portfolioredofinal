@@ -20,6 +20,7 @@
             <li><a href="#home" class="nav__link">Home</a></li>
             <li><a href="#about" class="nav__link">About</a></li>
             <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#lnc-projects" class="nav__link">Low &amp; No Code</a></li>
             <li><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
         <button class="nav__hamburger" id="hamburger" aria-label="Menu">
@@ -33,6 +34,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#lnc-projects">Low &amp; No Code</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -345,6 +347,126 @@
         </div>
     </section>
 
+    <!-- ============ LOW & NO CODE PROJECTS ============ -->
+    <section class="lnc-projects" id="lnc-projects">
+        <div class="lnc-projects__grid-bg" aria-hidden="true"></div>
+
+        <div class="section-header reveal">
+            <span class="section-label">04 — Low &amp; No Code</span>
+            <h2 class="section-title">low &amp; no code projects</h2>
+            <div class="title-rule"></div>
+            <p class="section-sub">A selection of projects built with low and no code platforms this semester, each with a short retrospective.</p>
+        </div>
+
+        <div class="lnc-grid">
+
+            <!-- LNC Project 1 -->
+            <article class="lnc-card reveal" data-delay="0">
+                <div class="lnc-card__screenshot lnc-carousel">
+                    <div class="lnc-carousel__slides">
+                        <img src="assets/lnc-tunein-1.png" alt="Tune-In — Feed (dark mode)" class="lnc-carousel__slide">
+                        <img src="assets/lnc-tunein-2.png" alt="Tune-In — My Reviews" class="lnc-carousel__slide">
+                        <img src="assets/lnc-tunein-3.png" alt="Tune-In — Profile" class="lnc-carousel__slide">
+                        <img src="assets/lnc-tunein-4.png" alt="Tune-In — Write a Review" class="lnc-carousel__slide">
+                        <img src="assets/lnc-tunein-5.png" alt="Tune-In — Feed (light mode)" class="lnc-carousel__slide">
+                        <img src="assets/lnc-tunein-6.png" alt="Tune-In — Feed with AI suggestion" class="lnc-carousel__slide">
+                    </div>
+                    <button class="lnc-carousel__btn lnc-carousel__prev" aria-label="Previous screenshot">&#8249;</button>
+                    <button class="lnc-carousel__btn lnc-carousel__next" aria-label="Next screenshot">&#8250;</button>
+                    <div class="lnc-carousel__dots"></div>
+                    <div class="lnc-card__img-placeholder" aria-hidden="true">
+                        <span>Screenshot</span>
+                    </div>
+                    <div class="lnc-card__platform-badge">Low Code</div>
+                </div>
+                <div class="lnc-card__body">
+                    <div class="lnc-card__tags">
+                        <span class="chip">Low Code</span>
+                        <span class="chip chip--accent">Social Platform</span>
+                    </div>
+                    <h3 class="lnc-card__title">Tune-In</h3>
+                    <p class="lnc-card__desc">
+                        A social music review platform, like Letterboxd, but for songs and albums. Users can build a listening history, write reviews, rate albums, follow friends, and curate queues of music they want to hear.
+                    </p>
+                    <div class="lnc-card__tools">
+                        <span class="tool-chip">GitHub Pages</span>
+                        <span class="tool-chip">HTML</span>
+                        <span class="tool-chip">CSS</span>
+                        <span class="tool-chip">JavaScript</span>
+                    </div>
+                    <div class="lnc-card__reflection">
+                        <div class="lnc-reflection-header">
+                            <span class="lnc-reflection-icon">◈</span>
+                            <span>Retrospective</span>
+                        </div>
+                        <p class="lnc-reflection-text">
+                            This project showcased my approach to development on an iterative scale. I managed development steps as modules in a larger hierarchy that focused on functionality and self-review collaborating with Claude AI. Additional movie database and Gemini AI API calls were also integrated at a later date, offering a challenging yet rewarding level of complexity when managing both integrations simultaneously. Upon reflection, I recognized the difficulty of implementing two API tools at the same time and I would streamline my process by focusing on one at a time if I were to redo this project.
+                        </p>
+                    </div>
+                    <div class="lnc-card__actions">
+                        <a href="https://tune-in-d636f.web.app" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">View Project ↗</a>
+                        <a href="https://github.com/br907888/tune-in" class="btn btn--ghost btn--sm btn--github" target="_blank" rel="noopener" aria-label="GitHub repository">
+                            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LNC Project 2 -->
+            <article class="lnc-card reveal" data-delay="150">
+                <div class="lnc-card__screenshot lnc-carousel">
+                    <div class="lnc-carousel__slides">
+                        <img src="assets/lnc-everywitch-1.png" alt="Every Witch Way — Home" class="lnc-carousel__slide">
+                        <img src="assets/lnc-everywitch-2.png" alt="Every Witch Way — Contact" class="lnc-carousel__slide">
+                        <img src="assets/lnc-everywitch-3.png" alt="Every Witch Way — Menu" class="lnc-carousel__slide">
+                        <img src="assets/lnc-everywitch-4.png" alt="Every Witch Way — About (Dark Mode)" class="lnc-carousel__slide">
+                    </div>
+                    <button class="lnc-carousel__btn lnc-carousel__prev" aria-label="Previous screenshot">&#8249;</button>
+                    <button class="lnc-carousel__btn lnc-carousel__next" aria-label="Next screenshot">&#8250;</button>
+                    <div class="lnc-carousel__dots"></div>
+                    <div class="lnc-card__img-placeholder" aria-hidden="true">
+                        <span>Screenshot</span>
+                    </div>
+                    <div class="lnc-card__platform-badge">Static Site</div>
+                </div>
+                <div class="lnc-card__body">
+                    <div class="lnc-card__tags">
+                        <span class="chip">HTML / CSS</span>
+                        <span class="chip chip--accent">Web Design</span>
+                    </div>
+                    <h3 class="lnc-card__title">Every Witch Way</h3>
+                    <p class="lnc-card__desc">
+                        A themed bakery and coffee shop website for a fictional downtown Orlando café. Built to showcase the shop's menu, location, hours, and vibe, which is targeting college students and remote workers looking for a cozy study spot.
+                    </p>
+                    <div class="lnc-card__tools">
+                        <span class="tool-chip">HTML</span>
+                        <span class="tool-chip">CSS</span>
+                        <span class="tool-chip">JavaScript</span>
+                        <span class="tool-chip">GitHub Pages</span>
+                    </div>
+                    <div class="lnc-card__reflection">
+                        <div class="lnc-reflection-header">
+                            <span class="lnc-reflection-icon">◈</span>
+                            <span>Retrospective</span>
+                        </div>
+                        <p class="lnc-reflection-text">
+                            This project was my first true collaboration with AI to build a responsive webpage. This experience taught me the importance of leveraging AI to focus on boilerplate code and intermittent tasks that streamlined the development process while I focused my core skills on site architecture, website design, and user interface design. This was also my first experience integrating API calls into a functioning webpage, as I integrated AI-generated images that serviced my design. With the skills I've acquired as a developer, I would love to revisit this project and add more responsive transitions between content and pages, including dynamic animations. I would also like to retrofit the localStorage persistence with cloud-based storage for a more flexible and malleable database.
+                        </p>
+                    </div>
+                    <div class="lnc-card__actions">
+                        <a href="https://br907888.github.io/week2-website/" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">View Project ↗</a>
+                        <a href="https://github.com/br907888/week2-website" class="btn btn--ghost btn--sm btn--github" target="_blank" rel="noopener" aria-label="GitHub repository">
+                            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
     <!-- Case Study In Depth -->
 
     <div class="modal-overlay" id="overlay" onclick="closeCase()">
@@ -364,7 +486,7 @@
         <div class="contact__orb contact__orb--2"></div>
 
         <div class="section-header reveal">
-            <span class="section-label">04 — Contact</span>
+            <span class="section-label">05 — Contact</span>
             <h2 class="section-title">contact me!</h2>
             <div class="title-rule"></div>
             <p class="section-sub">I'd love to connect. Reach out with any inquiries! (Form still under constuction!)</p>
@@ -425,6 +547,17 @@
             <p class="footer__sub">Crafted in Orlando, FL &nbsp;·&nbsp; Built with HTML, CSS & JS</p>
         </div>
     </footer>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+        <button class="lightbox__nav lightbox__prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+        <button class="lightbox__nav lightbox__next" id="lightboxNext" aria-label="Next">&#8250;</button>
+        <div class="lightbox__stage" id="lightboxStage">
+            <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        </div>
+        <div class="lightbox__counter" id="lightboxCounter"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
